@@ -1,0 +1,3 @@
+SWAGGER_JSON = {}
+SWAGGER_EXAMPLE_FLAG_MAKER = True
+SWAGGER_JSON_WAY = "config/swagger.json"

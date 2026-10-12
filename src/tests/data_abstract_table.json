@@ -1,0 +1,1918 @@
+{
+    "testGetColumns_data": [
+        {
+            "align": "left",
+            "column_type": "number",
+            "disable": true,
+            "field": "id",
+            "label": "Идентификатор",
+            "name": "id",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "text",
+            "field": "text",
+            "label": "Текст",
+            "name": "text",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "number",
+            "field": "int",
+            "label": "Целое цисло",
+            "name": "int",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "number",
+            "field": "float",
+            "label": "Число с плавающей запятой",
+            "name": "float",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "date",
+            "field": "date",
+            "label": "Дата",
+            "name": "date",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "datetime",
+            "field": "datetime",
+            "label": "Дата и время",
+            "name": "datetime",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "boolean",
+            "field": "bool",
+            "label": "Бинарное поле",
+            "name": "bool",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "classifier_options",
+            "field": "classifier_link",
+            "label": "Ссылка на классификатор",
+            "name": "classifier_link",
+            "options_dict": [
+                {
+                    "id": 1,
+                    "name": "спам"
+                },
+                {
+                    "id": 2,
+                    "name": "тест"
+                },
+                {
+                    "id": 3,
+                    "name": "Спам"
+                },
+                {
+                    "id": 4,
+                    "name": "ТЕСТ4"
+                }
+            ],
+            "sortable": true
+        }
+    ],
+    "testGetColumns_status": "200 OK",
+    "testGetComboBox_data": {
+        "column_type": "classifier_options",
+        "options_dict": [
+            {
+                "id": 1,
+                "name": "спам"
+            },
+            {
+                "id": 2,
+                "name": "тест"
+            },
+            {
+                "id": 3,
+                "name": "Спам"
+            },
+            {
+                "id": 4,
+                "name": "ТЕСТ4"
+            }
+        ]
+    },
+    "testGetComboBox_status": "200 OK",
+    "testGetComboBoxLang_data": {
+        "column_type": "classifier_options",
+        "options_dict": [
+            {
+                "id": 1,
+                "name": "spam"
+            },
+            {
+                "id": 2,
+                "name": "test"
+            },
+            {
+                "id": 3,
+                "name": "Spam"
+            },
+            {
+                "id": 4,
+                "name": "TEST4"
+            }
+        ]
+    },
+    "testGetComboBoxLang_status": "200 OK",
+    "testGetFilterClassifier_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 3
+    },
+    "testGetFilterClassifier_status": "200 OK",
+    "testGetFilterClassifierLang_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 3
+    },
+    "testGetFilterClassifierLang_status": "200 OK",
+    "testGetFilterEndsWith_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterEndsWith_status": "200 OK",
+    "testGetFilterEquals_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterEquals_status": "200 OK",
+    "testGetFilterGreaterThan_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 7
+    },
+    "testGetFilterGreaterThan_status": "200 OK",
+    "testGetFilterGreaterThanOrEqual_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 8
+    },
+    "testGetFilterGreaterThanOrEqual_status": "200 OK",
+    "testGetFilterLessThan_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            }
+        ],
+        "total": 2
+    },
+    "testGetFilterLessThan_status": "200 OK",
+    "testGetFilterLessThanOrEqual_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 3
+    },
+    "testGetFilterLessThanOrEqual_status": "200 OK",
+    "testGetFilterNone_data": {
+        "data": [],
+        "total": 0
+    },
+    "testGetFilterNone_status": "200 OK",
+    "testGetFilterNotContains_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 9
+    },
+    "testGetFilterNotContains_status": "200 OK",
+    "testGetFilterNotEquals_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 9
+    },
+    "testGetFilterNotEquals_status": "200 OK",
+    "testGetFilterNotNone_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 10
+    },
+    "testGetFilterNotNone_status": "200 OK",
+    "testGetFilterOperatorWrong_data": {
+        "error": "Не задано значение колонки в фильтре: text"
+    },
+    "testGetFilterOperatorWrong_status": "400 BAD REQUEST",
+    "testGetFilterStartsWith_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStartsWith_status": "200 OK",
+    "testGetFilterStr_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 2
+    },
+    "testGetFilterStr_status": "200 OK",
+    "testGetFilterStr3_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            }
+        ],
+        "total": 4
+    },
+    "testGetFilterStr3_status": "200 OK",
+    "testGetFilterStrCase_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStrCase_status": "200 OK",
+    "testGetFilterStrDate_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStrDate_status": "200 OK",
+    "testGetFilterStrFloat_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStrFloat_status": "200 OK",
+    "testGetFilterStrTime_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStrTime_status": "200 OK",
+    "testGetFilterTypeWrong_data": {
+        "error": "Не найдена колонка в фильтрах: bad"
+    },
+    "testGetFilterTypeWrong_status": "400 BAD REQUEST",
+    "testGetFilterValueWithWrong_data": {
+        "error": "Не задано значение колонки в фильтре: text"
+    },
+    "testGetFilterValueWithWrong_status": "400 BAD REQUEST",
+    "testGetFilterСontains_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterСontains_status": "200 OK",
+    "testGetId_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            }
+        ],
+        "total": 1
+    },
+    "testGetId_status": "200 OK",
+    "testGetIdWrong_data": {
+        "error": "Запись с id: 12 отсутствует"
+    },
+    "testGetIdWrong_status": "400 BAD REQUEST",
+    "testGetLang_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "spam"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "test"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "test"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "test"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "TEST4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "TEST4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "TEST4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "TEST4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            }
+        ],
+        "total": 10
+    },
+    "testGetLang_status": "200 OK",
+    "testGetPage1_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            }
+        ],
+        "total": 10
+    },
+    "testGetPage1_status": "200 OK",
+    "testGetPage2_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            }
+        ],
+        "total": 10
+    },
+    "testGetPage2_status": "200 OK",
+    "testGetProperties_data": {
+        "columns": [
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "id",
+                "label": "Идентификатор",
+                "name": "id",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "text",
+                "field": "text",
+                "label": "Текст",
+                "name": "text",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "int",
+                "label": "Целое цисло",
+                "name": "int",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "float",
+                "label": "Число с плавающей запятой",
+                "name": "float",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "date",
+                "field": "date",
+                "label": "Дата",
+                "name": "date",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "datetime",
+                "field": "datetime",
+                "label": "Дата и время",
+                "name": "datetime",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "boolean",
+                "field": "bool",
+                "label": "Бинарное поле",
+                "name": "bool",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "classifier_url": "classifier_test",
+                "column_type": "classifier_options",
+                "field": "classifier_link",
+                "label": "Ссылка на классификатор",
+                "name": "classifier_link",
+                "options_dict": [
+                    {
+                        "id": 1,
+                        "name": "спам"
+                    },
+                    {
+                        "id": 2,
+                        "name": "тест"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Спам"
+                    },
+                    {
+                        "id": 4,
+                        "name": "ТЕСТ4"
+                    }
+                ],
+                "sortable": true
+            }
+        ],
+        "defaultVisibleColumns": [
+            "text",
+            "int",
+            "float",
+            "date",
+            "datetime",
+            "bool",
+            "classifier_link"
+        ],
+        "formColumns": [
+            "text",
+            "int",
+            "float",
+            "date",
+            "datetime",
+            "bool",
+            "classifier_link"
+        ],
+        "rowKey": "id"
+    },
+    "testGetProperties_status": "200 OK",
+    "testGetPropertiesLangEn_data": {
+        "columns": [
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "id",
+                "label": "Id",
+                "name": "id",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "text",
+                "field": "text",
+                "label": "Text",
+                "name": "text",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "int",
+                "label": "Int",
+                "name": "int",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "float",
+                "label": "Float",
+                "name": "float",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "date",
+                "field": "date",
+                "label": "Date",
+                "name": "date",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "datetime",
+                "field": "datetime",
+                "label": "Datetime",
+                "name": "datetime",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "boolean",
+                "field": "bool",
+                "label": "Bool",
+                "name": "bool",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "classifier_url": "classifier_test",
+                "column_type": "classifier_options",
+                "field": "classifier_link",
+                "label": "Classifier",
+                "name": "classifier_link",
+                "options_dict": [
+                    {
+                        "id": 1,
+                        "name": "spam"
+                    },
+                    {
+                        "id": 2,
+                        "name": "test"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Spam"
+                    },
+                    {
+                        "id": 4,
+                        "name": "TEST4"
+                    }
+                ],
+                "sortable": true
+            }
+        ],
+        "defaultVisibleColumns": [
+            "text",
+            "int",
+            "float",
+            "date",
+            "datetime",
+            "bool",
+            "classifier_link"
+        ],
+        "formColumns": [
+            "text",
+            "int",
+            "float",
+            "date",
+            "datetime",
+            "bool",
+            "classifier_link"
+        ],
+        "rowKey": "id"
+    },
+    "testGetPropertiesLangEn_status": "200 OK",
+    "testGetSortBy_data": {
+        "data": [
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            }
+        ],
+        "total": 10
+    },
+    "testGetSortBy_status": "200 OK",
+    "testGetSortByWrong_data": {
+        "error": "Неизвестная колонка в сортировке: bad"
+    },
+    "testGetSortByWrong_status": "400 BAD REQUEST",
+    "testGetSortClassifierAsc_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Thu, 26 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 26 Feb 2026 08:00:00 GMT",
+                "float": 0.1,
+                "id": 9,
+                "int": 9,
+                "text": "тест9"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Wed, 25 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 25 Feb 2026 07:00:00 GMT",
+                "float": 11.5,
+                "id": 8,
+                "int": 8,
+                "text": "тест8"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Tue, 24 Feb 2026 00:00:00 GMT",
+                "datetime": "Tue, 24 Feb 2026 06:00:00 GMT",
+                "float": 10.1,
+                "id": 7,
+                "int": 7,
+                "text": "тест7"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 4,
+                    "value": "ТЕСТ4"
+                },
+                "date": "Fri, 27 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 27 Feb 2026 09:00:00 GMT",
+                "float": 11.0,
+                "id": 10,
+                "int": 10,
+                "text": "тест10"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            }
+        ],
+        "total": 10
+    },
+    "testGetSortClassifierAsc_status": "200 OK",
+    "testGetSortClassifierDesc_data": {
+        "data": [
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "datetime": "Wed, 18 Feb 2026 00:00:00 GMT",
+                "float": 1.0,
+                "id": 1,
+                "int": 1,
+                "text": "тест1"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Thu, 19 Feb 2026 00:00:00 GMT",
+                "datetime": "Thu, 19 Feb 2026 01:00:00 GMT",
+                "float": 0.5,
+                "id": 2,
+                "int": 2,
+                "text": "тест2"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 1,
+                    "value": "спам"
+                },
+                "date": "Fri, 20 Feb 2026 00:00:00 GMT",
+                "datetime": "Fri, 20 Feb 2026 02:00:00 GMT",
+                "float": 1.2,
+                "id": 3,
+                "int": 3,
+                "text": "тест3"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sat, 21 Feb 2026 00:00:00 GMT",
+                "datetime": "Sat, 21 Feb 2026 03:00:00 GMT",
+                "float": 1.8,
+                "id": 4,
+                "int": 4,
+                "text": "тест4"
+            },
+            {
+                "bool": true,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Sun, 22 Feb 2026 00:00:00 GMT",
+                "datetime": "Sun, 22 Feb 2026 04:00:00 GMT",
+                "float": 3.1,
+                "id": 5,
+                "int": 5,
+                "text": "тест5"
+            },
+            {
+                "bool": false,
+                "classifier_link": {
+                    "id": 2,
+                    "value": "тест"
+                },
+                "date": "Mon, 23 Feb 2026 00:00:00 GMT",
+                "datetime": "Mon, 23 Feb 2026 05:00:00 GMT",
+                "float": 4.1,
+                "id": 6,
+                "int": 6,
+                "text": "тест6"
+            }
+        ],
+        "total": 10
+    },
+    "testGetSortClassifierDesc_status": "200 OK",
+    "testUpdateEmpty_data": {
+        "id": 1,
+        "message": "Record edited"
+    },
+    "testUpdateEmpty_status": "200 OK",
+    "testUpdateEmpty_title": {
+        "text": null,
+        "int": 1,
+        "float": 1.0,
+        "date": "2026-02-18",
+        "bool": true,
+        "classifier_link": null
+    }
+}

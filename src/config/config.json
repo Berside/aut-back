@@ -1,0 +1,21 @@
+{
+    "SQLALCHEMY_DATABASE_URI": "postgresql://postgres:postgres@localhost/asutg",
+    "SQLALCHEMY_DATABASE_URI_TEST": "postgresql://postgres:postgres@localhost/asutg_test",
+    "SECRET_KEY": "GuRzUkzHejMIwPF7qLyQpyoAxOy9uSno",
+    "JWT_ACCESS_TOKEN_EXPIRES_MIN": 30,
+    "JWT_REFRESH_TOKEN_EXPIRES_MIN": 540,
+    "DEFAULT_ADMIN_USERNAME": "admin",
+    "DEFAULT_ADMIN_PASSWORD": "admin",
+    "LDAP_HOST": "ldaps://MAIN-SERVER.server.local",
+    "LDAP_DOMAIN": "server.local",
+    "LDAP_SEARCH_BASE": "DC=server,DC=local",
+    "LDAP_GROUP_PREFIX": "IvanIvanov",
+    "AUTH_DEBUG_MODE": true,
+    "OU": "AppAccess",
+    "LDAP_SERVER" : "MAIN-SERVER.server.local",
+    "LDAP_SERVER_IP": "10.0.2.10",
+    "LDAP_PORT" : 636,
+    "LDAP_USER" : "server.local\\Ivan_admin",
+    "LDAP_USER_PASSWORD" : "3c3Kbs9XiTpd8avTWGxdmQVM3uFuBzuN"
+
+}

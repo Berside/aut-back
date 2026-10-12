@@ -1,0 +1,479 @@
+{
+    "testDelete_data": {
+        "message": "Record deleted"
+    },
+    "testDelete_status": "200 OK",
+    "testDelete_count": 4,
+    "testGetColumns_data": [
+        {
+            "align": "left",
+            "column_type": "number",
+            "disable": true,
+            "field": "id",
+            "label": "Идентификатор",
+            "name": "id",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "text",
+            "field": "text",
+            "label": "Текст",
+            "name": "text",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "classifier_options",
+            "field": "classifier_two_link",
+            "label": "Ссылка на классификатор",
+            "name": "classifier_two_link",
+            "options_dict": [
+                {
+                    "id": 1,
+                    "name": "boo1"
+                },
+                {
+                    "id": 2,
+                    "name": "boo2"
+                },
+                {
+                    "id": 3,
+                    "name": "boo3"
+                }
+            ],
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "text",
+            "field": "ClassifierTestTwo.name_two",
+            "label": "Наименование 2",
+            "name": "ClassifierTestTwo.name_two",
+            "sortable": true
+        },
+        {
+            "align": "left",
+            "column_type": "text",
+            "field": "ClassifierTestTwo.ClassifierTest.name",
+            "label": "Наименование",
+            "name": "ClassifierTestTwo.ClassifierTest.name",
+            "sortable": true
+        }
+    ],
+    "testGetColumns_status": "200 OK",
+    "testGetFilterClassifier_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            }
+        ],
+        "total": 2
+    },
+    "testGetFilterClassifier_status": "200 OK",
+    "testGetFilterClassifier2_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterClassifier2_status": "200 OK",
+    "testGetFilterClassifier3_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            }
+        ],
+        "total": 2
+    },
+    "testGetFilterClassifier3_status": "200 OK",
+    "testGetFilterClassifierEmpty_data": {
+        "data": [],
+        "total": 0
+    },
+    "testGetFilterClassifierEmpty_status": "200 OK",
+    "testGetFilterEquals_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterEquals_status": "200 OK",
+    "testGetFilterStr3_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            }
+        ],
+        "total": 1
+    },
+    "testGetFilterStr3_status": "200 OK",
+    "testGetFilterValueWithWrong_data": {
+        "error": "Не найдена колонка в фильтрах: ClassifierTestTwo.ClassifierTest.bad"
+    },
+    "testGetFilterValueWithWrong_status": "400 BAD REQUEST",
+    "testGetFilterСontains_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            }
+        ],
+        "total": 2
+    },
+    "testGetFilterСontains_status": "200 OK",
+    "testGetPage1_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 1,
+                "text": "foo1"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 2,
+                "text": "foo2"
+            }
+        ],
+        "total": 5
+    },
+    "testGetPage1_status": "200 OK",
+    "testGetProperties_data": {
+        "columns": [
+            {
+                "align": "left",
+                "column_type": "number",
+                "field": "id",
+                "label": "Идентификатор",
+                "name": "id",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "text",
+                "field": "text",
+                "label": "Текст",
+                "name": "text",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "classifier_url": "classifier_test_two",
+                "column_type": "classifier_options",
+                "field": "classifier_two_link",
+                "label": "Ссылка на классификатор",
+                "name": "classifier_two_link",
+                "options_dict": [
+                    {
+                        "id": 1,
+                        "name": "boo1"
+                    },
+                    {
+                        "id": 2,
+                        "name": "boo2"
+                    },
+                    {
+                        "id": 3,
+                        "name": "boo3"
+                    }
+                ],
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "text",
+                "field": "ClassifierTestTwo.name_two",
+                "label": "Наименование 2",
+                "name": "ClassifierTestTwo.name_two",
+                "sortable": true
+            },
+            {
+                "align": "left",
+                "column_type": "text",
+                "field": "ClassifierTestTwo.ClassifierTest.name",
+                "label": "Наименование",
+                "name": "ClassifierTestTwo.ClassifierTest.name",
+                "sortable": true
+            }
+        ],
+        "defaultVisibleColumns": [
+            "text",
+            "ClassifierTestTwo.name_two",
+            "ClassifierTestTwo.ClassifierTest.name"
+        ],
+        "formColumns": [
+            "id",
+            "text",
+            "classifier_two_link"
+        ],
+        "rowKey": "id"
+    },
+    "testGetProperties_status": "200 OK",
+    "testGetSortBy_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 2,
+                "text": "foo2"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 1,
+                "text": "foo1"
+            }
+        ],
+        "total": 5
+    },
+    "testGetSortBy_status": "200 OK",
+    "testGetSortByWrong_data": {
+        "error": "Неизвестная колонка в сортировке: ClassifierTestTwo.ClassifierTest.bad"
+    },
+    "testGetSortByWrong_status": "400 BAD REQUEST",
+    "testGetSortClassifierAsc_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 1,
+                "text": "foo1"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 2,
+                "text": "foo2"
+            }
+        ],
+        "total": 5
+    },
+    "testGetSortClassifierAsc_status": "200 OK",
+    "testGetSortClassifierDesc_data": {
+        "data": [
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 1,
+                "text": "foo1"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "spam",
+                "ClassifierTestTwo.name_two": "проверка1",
+                "classifier_two_link": {
+                    "id": 1,
+                    "value": "boo1"
+                },
+                "id": 2,
+                "text": "foo2"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "Спам",
+                "ClassifierTestTwo.name_two": "проверка3",
+                "classifier_two_link": {
+                    "id": 3,
+                    "value": "boo3"
+                },
+                "id": 5,
+                "text": "foo5"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 3,
+                "text": "foo3"
+            },
+            {
+                "ClassifierTestTwo.ClassifierTest.name": "тест",
+                "ClassifierTestTwo.name_two": "проверка2",
+                "classifier_two_link": {
+                    "id": 2,
+                    "value": "boo2"
+                },
+                "id": 4,
+                "text": "foo4"
+            }
+        ],
+        "total": 5
+    },
+    "testGetSortClassifierDesc_status": "200 OK",
+    "testPost_data": {
+        "id": 6,
+        "message": "Record added"
+    },
+    "testPost_status": "200 OK",
+    "testPost_count": 6,
+    "testPost_title": {
+        "text": "Тест",
+        "classifier_two_link": 3
+    }
+}

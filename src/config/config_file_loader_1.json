@@ -1,0 +1,38 @@
+{
+    "file_rules":
+    {
+        "file_type": "excel",
+        "sheet": 0,
+        "skip_rows": 1,
+        "quantity_rows": 10,
+        "target_model": "ListResources"
+    },
+    "row_rules":
+    {
+        "column_mapping":{
+            "A": "id",
+            "B": "DictResource.name_ru",
+            "C": "DictResource.name_en",
+            "D": "DictResource.DictResourceType.name_ru",
+            "E": "DictResource.DictResourceType.name_en",
+            "F": "designation",
+            "G": "DictResource.DictResourceCategory.name_ru",
+            "H": "DictResource.DictResourceCategory.name_en",
+            "I": "article",
+            "J": "count_in_article",
+            "K": "count_norm",
+            "L": "current_stock",
+            "M": "DictOkei.nat_designation",
+            "N": "date_deletion",
+            "O": "ListResourceLocation.rack",
+            "P": "ListResourceLocation.shelf",
+            "Q": "ListResourceLocation.place",
+            "R": "ListResourceLocation.placement"        
+        },
+        "transfomations":
+        {
+            "storage_location": "split_by_dash"
+        },
+    "ignore_columns": []
+    }
+}

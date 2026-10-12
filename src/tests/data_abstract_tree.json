@@ -1,0 +1,107 @@
+{
+    "testGetClassifiersList_data": [
+        {
+            "children": [
+                {
+                    "class_path": "src.orm.orm_cls.CategoriesTechnicalCondition",
+                    "date_deletion": null,
+                    "date_employment": null,
+                    "hasChildren": false,
+                    "id": 4,
+                    "name_en": null,
+                    "name_ru": "Категории технического состояния",
+                    "note": null,
+                    "parent_link": 0,
+                    "schema": "cls",
+                    "table_name": "categories_technical_condition"
+                },
+                {
+                    "children": [
+                        {
+                            "class_path": "src.orm.orm_cls.CategoriesTechnicalCondition",
+                            "date_deletion": null,
+                            "date_employment": null,
+                            "hasChildren": false,
+                            "id": 6,
+                            "name_en": null,
+                            "name_ru": "Тест 1",
+                            "note": null,
+                            "parent_link": 5,
+                            "schema": "cls",
+                            "table_name": "categories_technical_condition"
+                        },
+                        {
+                            "class_path": "src.orm.orm_cls.CategoriesTechnicalCondition",
+                            "date_deletion": null,
+                            "date_employment": null,
+                            "hasChildren": false,
+                            "id": 7,
+                            "name_en": null,
+                            "name_ru": "Тест 2",
+                            "note": null,
+                            "parent_link": 5,
+                            "schema": "cls",
+                            "table_name": "categories_technical_condition"
+                        }
+                    ],
+                    "class_path": "src.orm.orm_cls.CategoriesTechnicalCondition",
+                    "date_deletion": null,
+                    "date_employment": null,
+                    "hasChildren": true,
+                    "id": 5,
+                    "name_en": null,
+                    "name_ru": "Папка 1",
+                    "note": null,
+                    "parent_link": 0,
+                    "schema": "cls",
+                    "table_name": "categories_technical_condition"
+                }
+            ],
+            "class_path": "src.orm.orm_cls.ClassifiersList",
+            "date_deletion": null,
+            "date_employment": null,
+            "hasChildren": true,
+            "id": 0,
+            "name_en": null,
+            "name_ru": "Список классификаторов",
+            "note": null,
+            "parent_link": null,
+            "schema": "cls",
+            "table_name": "classifiers_list"
+        }
+    ],
+    "testGetClassifiersList_status": "200 OK",
+    "testGetClassifiersListEmpty_data": [],
+    "testGetClassifiersListEmpty_status": "200 OK",
+    "testGetClassifiersListShort_data": [
+        {
+            "children": [
+                {
+                    "class_path": "src.orm.orm_cls.CategoriesTechnicalCondition",
+                    "date_deletion": null,
+                    "date_employment": null,
+                    "hasChildren": false,
+                    "id": 4,
+                    "name_en": null,
+                    "name_ru": "Категории технического состояния",
+                    "note": null,
+                    "parent_link": 0,
+                    "schema": "cls",
+                    "table_name": "categories_technical_condition"
+                }
+            ],
+            "class_path": "src.orm.orm_cls.ClassifiersList",
+            "date_deletion": null,
+            "date_employment": null,
+            "hasChildren": true,
+            "id": 0,
+            "name_en": null,
+            "name_ru": "Список классификаторов",
+            "note": null,
+            "parent_link": null,
+            "schema": "cls",
+            "table_name": "classifiers_list"
+        }
+    ],
+    "testGetClassifiersListShort_status": "200 OK"
+}

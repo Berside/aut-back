@@ -1,0 +1,612 @@
+opencollection: 1.0.0
+info:
+  name: S3 API
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ''
+      port: ''
+      auth:
+        username: ''
+        password: ''
+      bypassProxy: ''
+items:
+  - info:
+      name: 01 Бакет
+      type: folder
+      seq: 1
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Проверить существование бакета
+          type: http
+          seq: 2
+        http:
+          method: GET
+          url: '{{base_url}}/bucket/exists'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Создать бакет
+          type: http
+          seq: 1
+        http:
+          method: POST
+          url: '{{base_url}}/bucket'
+          headers:
+            - name: Content-Type
+              value: application/json
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 02 Версионирование
+      type: folder
+      seq: 2
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Включить версионирование
+          type: http
+          seq: 2
+        http:
+          method: PUT
+          url: '{{base_url}}/bucket/versioning'
+          headers:
+            - name: Content-Type
+              value: application/json
+          body:
+            type: json
+            data: |-
+              {
+                "enabled": true
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Приостановить версионирование
+          type: http
+          seq: 3
+        http:
+          method: PUT
+          url: '{{base_url}}/bucket/versioning'
+          headers:
+            - name: Content-Type
+              value: application/json
+          body:
+            type: json
+            data: |-
+              {
+                "enabled": false
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Получить статус версионирования
+          type: http
+          seq: 1
+        http:
+          method: GET
+          url: '{{base_url}}/bucket/versioning'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 03 Загрузка
+      type: folder
+      seq: 3
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Загрузка по пути на сервере
+          type: http
+          seq: 1
+        http:
+          method: POST
+          url: '{{base_url}}/objects/test.txt/upload-path'
+          body:
+            type: json
+            data: |-
+              {
+                "source_path": "/tmp/test.txt",
+                "presigned": false
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Загрузка сырых байтов (PUT)
+          type: http
+          seq: 2
+        http:
+          method: PUT
+          url: '{{base_url}}/objects/test2.txt'
+          headers:
+            - name: Content-Type
+              value: text/plain
+          body:
+            type: text
+            data: TEST TEST TEST 1 2 3
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Загрузка через форму (multipart)
+          type: http
+          seq: 3
+        http:
+          method: POST
+          url: '{{base_url}}/objects/test.txt/upload-form'
+          body:
+            type: multipart-form
+            data:
+              - name: file
+                type: file
+                value:
+                  - C:\Users\aapechurkin\Downloads\test.txt
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 04 Скачивание
+      type: folder
+      seq: 4
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Потоковое скачивание (stream)
+          type: http
+          seq: 3
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.mp4/stream?chunk_size=8192'
+          params:
+            - name: chunk_size
+              value: '8192'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Скачать в файл на сервере
+          type: http
+          seq: 2
+        http:
+          method: POST
+          url: '{{base_url}}/objects/test.txt/download-to'
+          headers:
+            - name: Content-Type
+              value: application/json
+          body:
+            type: json
+            data: |-
+              {
+                "destination": "/tmp/test.txt"
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Скачать объект (download)
+          type: http
+          seq: 1
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/download'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 06 Удаление
+      type: folder
+      seq: 6
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Удалить несколько объектов
+          type: http
+          seq: 2
+        http:
+          method: DELETE
+          url: '{{base_url}}/objects'
+          headers:
+            - name: Content-Type
+              value: application/json
+          body:
+            type: json
+            data: |-
+              {
+                "keys": ["a.txt", "b.txt", "c.txt"]
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Удалить один объект
+          type: http
+          seq: 1
+        http:
+          method: DELETE
+          url: '{{base_url}}/objects/test2.txt'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 05 Метаданные
+      type: folder
+      seq: 5
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Получить информацию об объекте
+          type: http
+          seq: 1
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.mp4/info'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Проверить существование объекта
+          type: http
+          seq: 2
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.mp4/exists'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Список объектов
+          type: http
+          seq: 3
+        http:
+          method: GET
+          url: '{{base_url}}/objects?prefix=&recursive=true'
+          params:
+            - name: prefix
+              value: ''
+              type: query
+            - name: recursive
+              value: 'true'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 07 Presigned URL
+      type: folder
+      seq: 7
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Presigned GET URL
+          type: http
+          seq: 1
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.mp4/presigned-url?expiry=3600'
+          params:
+            - name: expiry
+              value: '3600'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Presigned PUT Example
+          type: http
+          seq: 3
+        http:
+          method: PUT
+          url: http://192.168.7.74:9000/asutgbucket/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=grnts3admin%2F20260831%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260831T140735Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7607575994c8e77a6358005b178fb8eec9496509607139e01cddec1df776f381
+          params:
+            - name: X-Amz-Algorithm
+              value: AWS4-HMAC-SHA256
+              type: query
+            - name: X-Amz-Credential
+              value: grnts3admin%2F20260831%2Fus-east-1%2Fs3%2Faws4_request
+              type: query
+            - name: X-Amz-Date
+              value: 20260831T140735Z
+              type: query
+            - name: X-Amz-Expires
+              value: '3600'
+              type: query
+            - name: X-Amz-SignedHeaders
+              value: host
+              type: query
+            - name: X-Amz-Signature
+              value: 7607575994c8e77a6358005b178fb8eec9496509607139e01cddec1df776f381
+              type: query
+          body:
+            type: file
+            data:
+              - filePath: C:\Users\aapechurkin\Downloads\test.txt
+                contentType: text/plain
+                selected: true
+          auth: inherit
+        settings:
+          encodeUrl: false
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: false
+        docs: |-
+          Вызов через curl:\
+          curl -X PUT --data-binary @test.txt "<http://192.168.7.74:9000/asutgbucket/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=grnts3admin%2F20260831%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260831T140735Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7607575994c8e77a6358005b178fb8eec9496509607139e01cddec1df776f381>"\
+          \
+          Необходимо отключать url encoding!\
+          Загрузка файла напрямую в s3
+      - info:
+          name: Presigned PUT URL
+          type: http
+          seq: 2
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/presigned-put-url?expiry=3600'
+          params:
+            - name: expiry
+              value: '3600'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 08 Копирование
+      type: folder
+      seq: 8
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Копировать объект
+          type: http
+          seq: 1
+        http:
+          method: POST
+          url: '{{base_url}}/objects/test.mp4/copy'
+          headers:
+            - name: Content-Type
+              value: application/json
+          body:
+            type: json
+            data: |-
+              {
+                "dst_key": "trash/test.mp4",
+                "dst_bucket": null
+              }
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+  - info:
+      name: 09 Версии объектов
+      type: folder
+      seq: 9
+    request:
+      auth: inherit
+    items:
+      - info:
+          name: Список всех версий
+          type: http
+          seq: 1
+        http:
+          method: GET
+          url: '{{base_url}}/objects/versions?prefix=test.txt&include_delete_markers=false'
+          params:
+            - name: prefix
+              value: test.txt
+              type: query
+            - name: include_delete_markers
+              value: 'false'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Presigned URL для версии
+          type: http
+          seq: 8
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/versions/c4bdc42c-6abd-4ae7-bc13-0feed749dc0b/presigned-url?expiry=3600'
+          params:
+            - name: expiry
+              value: '3600'
+              type: query
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Версии конкретного объекта
+          type: http
+          seq: 2
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/versions'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Восстановить версию
+          type: http
+          seq: 7
+        http:
+          method: POST
+          url: '{{base_url}}/objects/test.txt/versions/c4bdc42c-6abd-4ae7-bc13-0feed749dc0b/restore'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Информация о версии
+          type: http
+          seq: 3
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/versions/c4bdc42c-6abd-4ae7-bc13-0feed749dc0b/info'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Проверить существование версии
+          type: http
+          seq: 4
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/versions/c4bdc42c-6abd-4ae7-bc13-0feed749dc0b/exists'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Скачать версию
+          type: http
+          seq: 5
+        http:
+          method: GET
+          url: '{{base_url}}/objects/test.txt/versions/c4bdc42c-6abd-4ae7-bc13-0feed749dc0b/download'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+      - info:
+          name: Удалить версию
+          type: http
+          seq: 6
+        http:
+          method: DELETE
+          url: '{{base_url}}/objects/c.txt/versions/36f6919f-8a4d-45b5-ac91-8b08fa78081a'
+          auth: inherit
+        settings:
+          encodeUrl: true
+          timeout: 0
+          followRedirects: true
+          maxRedirects: 5
+          forwardAuthorizationHeader: true
+request:
+  variables:
+    - name: base_url
+      value: http://localhost:5000/api/s3
+bundled: true
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
+    exportedAt: '2026-09-01T13:26:41.261Z'
+    exportedUsing: Bruno

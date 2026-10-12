@@ -1,0 +1,70 @@
+{
+    "file_rules":
+    {
+        "file_type": "excel",
+        "sheet": 1,
+        "skip_rows": 1,
+        "target_model": "ListResources"
+    },
+    "static_fields":[
+        {
+            "model": "DictResourceCategory",
+            "identity": "name_ru",
+            "name_ru": "ЗИП",
+            "name_en": "ZIP",
+            "dictionary_property" : true
+        },
+        {
+            "model": "ListDepartment",
+            "identity": "name_ru",
+            "name_ru": "Склад ЗИП"
+        }
+    ],
+    "column_mapping":[
+        {
+            "column" : "A",
+            "type" : "ignore"            
+        },
+        {
+            "column" : "B",
+            "field" : "DictResource.DictResourceType.name_ru",
+            "type" : "classifier_merge_recursive"
+        },
+        {
+            "column" : "C",
+            "field" : "DictResource.name_ru",
+            "type" : "classifier_merge_recursive",
+            "dictionary_property" : true
+        },
+        {
+            "column" : "D",
+            "field" : "DictResource.designation_ru",
+            "type" : "classifier_merge_recursive",
+            "dictionary_property" : true
+        },
+        {
+            "column" : "E",
+            "field" : "DictResource.designation_en",
+            "type" : "classifier_merge_recursive",
+            "dictionary_property" : true
+        },    
+        {
+            "column" : "F",
+            "field" : "DictOkei.nat_designation",
+            "type" : "classifier_find"
+        },
+        {
+            "column" : "G",
+            "field" : "current_stock"
+        },
+        {
+            "column" : "H",
+            "field" : "ListResourceLocation",
+            "to_parse": ["rack", "shelf", "place", "placement"],
+            "unique_fields": ["ListDepartment", "rack", "shelf", "place", "placement"],
+            "delimiter": "-",
+            "type" : "column_parsing",
+            "dictionary_property" : true
+        }
+    ]
+}

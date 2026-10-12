@@ -1,0 +1,62 @@
+{
+    "file_rules":
+    {
+        "file_type": "excel",
+        "sheet": 1,
+        "skip_rows": 1,
+        "target_model": "ListResources"
+    },
+    "column_mapping":[
+        {
+            "column" : "A",
+            "type" : "ignore"            
+        },
+        {
+            "column" : "B",
+            "field" : "DictResource.name_ru",
+            "type" : "classifier_merge_recursive",
+            "dictionary_property" : true
+        },
+        {
+            "column" : "C",
+            "field" : "DictResource.DictResourceType.name_ru",
+            "type" : "classifier_merge_recursive"
+        },
+        {
+            "column" : "D",
+            "type" : "ignore"
+        },
+        {
+            "column" : "E",
+            "type" : "ignore"
+        },    
+        {
+            "column" : "F",
+            "field" : "DictOkei.nat_designation",
+            "type" : "classifier_find"
+        },
+        {
+            "column" : "G",
+            "field" : "current_stock"
+        },
+        {
+            "column" : "H",
+            "field" : "ListResourceLocation",
+            "to_parse": ["rack", "shelf", "place", "placement"],
+            "unique_fields": ["ListDepartment", "rack", "shelf", "place", "placement"],
+            "delimiter": "-",
+            "type" : "column_parsing",
+            "dictionary_property" : true
+        },
+        {
+            "column": "I",
+            "field": "DictResource.DictResourceCategory.name_ru",
+            "dictionary_property" : true
+        },
+        {
+            "column": "J",
+            "field": "ListDepartment.name_ru",
+            "dictionary_property" : true
+        }
+    ]
+}
