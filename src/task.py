@@ -43,6 +43,27 @@ def create_abstract_task_subclass(abstract_class, cls_, cls_zip_, cls_tool_, cls
     return DynamicTaskClass
 
 
+def _parse_gantt_date(value):
+    if value is None:
+        return None
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError('Дата должна быть строкой в формате YYYY-MM-DD')
+    try:
+        parsed = datetime.datetime.fromisoformat(value.strip().replace('Z', '+00:00'))
+        # В БД поля Task используют DateTime без timezone.
+        return parsed.replace(tzinfo=None)
+    except ValueError as error:
+        raise ValueError('Дата должна быть в формате YYYY-MM-DD или ISO 8601') from error
+
+
+def _gantt_dates_response(task):
+    return {
+        'id': task.id,
+        'start_date': task.start_date.isoformat() if task.start_date else None,
+        'end_date': task.end_date.isoformat() if task.end_date else None,
+    }
+
+
 def create_abstract_task_properties_subclass(abstract_class, cls_, cls_zip_, cls_tool_, cls_previous_next_,
                                   cls_upper_, cls_upper_object_, task_column_list_, additional_):
     class DynamicTaskClass(abstract_class):
@@ -417,6 +438,52 @@ def factory_method_url_rules_task(app,spec):
 
     app.add_url_rule('/planning/',
                         view_func=cls_task.as_view('planning'), methods=['GET', 'POST', 'DELETE'])
+
+    @app.route('/planning/<int:task_id>/dates', methods=['PATCH'])
+    def update_task_dates(task_id):
+        """Изменение периода задачи для диаграммы Ганта."""
+        data = request.get_json() or {}
+        task = db.session.get(Task, task_id)
+        if task is None:
+            return jsonify({'message': 'Задача не найдена'}), 404
+
+        try:
+            start_date = _parse_gantt_date(data.get('start_date'))
+            end_date = _parse_gantt_date(data.get('end_date'))
+        except ValueError as error:
+            return jsonify({'message': str(error)}), 400
+
+        if start_date is None or end_date is None:
+            return jsonify({'message': 'Поля start_date и end_date обязательны'}), 400
+        if end_date <= start_date:
+            return jsonify({'message': 'end_date должна быть позже start_date'}), 400
+
+        task.start_date = start_date
+        task.end_date = end_date
+        db.session.commit()
+        return jsonify(_gantt_dates_response(task)), 200
+
+    @app.route('/planning/<int:task_id>/duration', methods=['PATCH'])
+    def update_task_duration(task_id):
+        """Изменение длительности задачи в днях с сохранением даты начала."""
+        data = request.get_json() or {}
+        task = db.session.get(Task, task_id)
+        if task is None:
+            return jsonify({'message': 'Задача не найдена'}), 404
+
+        try:
+            duration_days = float(data.get('duration_days'))
+        except (TypeError, ValueError):
+            return jsonify({'message': 'duration_days должно быть числом'}), 400
+
+        if duration_days <= 0:
+            return jsonify({'message': 'duration_days должно быть больше нуля'}), 400
+        if task.start_date is None:
+            return jsonify({'message': 'У задачи не задан start_date'}), 400
+
+        task.end_date = task.start_date + datetime.timedelta(days=duration_days)
+        db.session.commit()
+        return jsonify(_gantt_dates_response(task)), 200
 
     schema = create_schema(Task)
     filter_schema = create_filter_schema(Task)
